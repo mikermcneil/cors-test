@@ -6,10 +6,19 @@
  */
 
 module.exports = {
+    
+  'signup': function (req, res) {
+    res.view();
+  },
 
   create: function (req, res) {
     sails.log('Triggered `create` action of `EventController`');
-    return res.ok();
+    return res.redirect("/event/loggedin");
+  },
+    
+  loggedin: function (req, res) {
+    sails.log('Triggered `loggedin` action of `EventController`');
+    return res.view();
   }
 
 };
